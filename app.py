@@ -1,10 +1,12 @@
 from flask import Flask
+import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Hello, Flask!"
+  return "Hello, Flask!"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+  PORT = int(os.environ.get('PORT', 3001))
+  app.run(host='0.0.0.0', port=PORT, debug=True)
