@@ -3,7 +3,7 @@ from models import db, contactsModel
 from . import app
 
 
-@app.route('/contacts', methods=['POST'])
+@app.route('/contacts', methods=['GET','POST'])
 def create_or_update_contact():
   data = request.get_json(silent=True)
   email = data.get('email')
@@ -17,3 +17,6 @@ def create_or_update_contact():
   db.session.add(contact)
   db.session.commit()
   return jsonify('OK'), 200
+
+#@app.route('/webhook', method=['POST'])
+#def webhook():
