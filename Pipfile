@@ -9,6 +9,7 @@ sqlalchemy = "*"
 requests = "*"
 gunicorn = "*"
 python-dotenv = "*"
+hubspot-api-client = "*"
 
 [dev-packages]
 

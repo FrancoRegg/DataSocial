@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "a5f63d3dc406076a107b169c14bf76409282ee1ae13587177ccd0b5827109c1d"
+            "sha256": "4952dc1d83c5b512b0f90eb911f3c08c077fc2400d57128673002748043e5cc6"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -226,6 +226,15 @@
             "markers": "python_version >= '3.7'",
             "version": "==22.0.0"
         },
+        "hubspot-api-client": {
+            "hashes": [
+                "sha256:9a75452a975142148aeee6ce612d6bf6f939974ada2687183791c600872317db",
+                "sha256:dfd0cd025659f4e7eb578eb029b6529649c7b8dddc916613d52b44665533dd8d"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.7'",
+            "version": "==9.0.0"
+        },
         "idna": {
             "hashes": [
                 "sha256:028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc",
@@ -324,6 +333,14 @@
             "markers": "python_version >= '3.7'",
             "version": "==24.0"
         },
+        "python-dateutil": {
+            "hashes": [
+                "sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3",
+                "sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==2.9.0.post0"
+        },
         "python-dotenv": {
             "hashes": [
                 "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca",
@@ -341,6 +358,14 @@
             "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==2.32.3"
+        },
+        "six": {
+            "hashes": [
+                "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+                "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==1.16.0"
         },
         "sqlalchemy": {
             "hashes": [
