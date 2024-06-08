@@ -21,7 +21,7 @@ def create_or_update_contact():
   #update_hubspot(email, name)
   return jsonify('OK'), 200
 '''
-@app.route('/webhook', method=['POST'])
+@app.route('/webhook', methods=['POST'])
 def webhook():
   body = request.get_json(silent=True)
   email = body.get('email')
