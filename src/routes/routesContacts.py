@@ -1,26 +1,9 @@
-from flask import  Flask, request, jsonify
-from models import db, contactsModel
-from utils import upsert_contact, update_hubspot
-from . import app
+from flask import request, jsonify, Blueprint
+from src.utils.functionHubSpot import update_hubspot
+from src.utils.functionUpsertContact import upsert_contact
 
-'''
-@app.route('/contacts', methods=['POST'])
-def create_or_update_contact():
-  #Extrae datos del cuero de la solicitud 
-  body = request.get_json(silent=True)
-  email = body.get('email')
-  name = body.get('name')
+app = Blueprint("app", __name__)
 
-  contact = contactsModel.query.filter_by(email=email).first() #Busca si ya existe un contacto con el email proporcionado
-  if contact:
-    contact.name = name #Si el contacto existe, actualiza el nombre
-  else:
-    contact = contactsModel(email=body['email'], name=body['name']) #Si no existe, crearlo
-  db.session.add(contact)
-  db.session.commit()
-  #update_hubspot(email, name)
-  return jsonify('OK'), 200
-'''
 @app.route('/webhook', methods=['POST'])
 def webhook():
   body = request.get_json(silent=True)
