@@ -1,12 +1,15 @@
 from flask import Flask
 import os
 from config import Config
-from models import db
+from src.models.contactsModel import db
+from src.routes.routesContacts import app as contacts_blueprint
 
 app = Flask(__name__)
-app.config.from_object(Config)
 
+app.config.from_object(Config)
 db.init_app(app)
+
+app.register_blueprint(contacts_blueprint)
 
 @app.route('/')
 def home():
