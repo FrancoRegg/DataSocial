@@ -1,4 +1,4 @@
-from hubspot import HubSpot
+'''from hubspot import HubSpot
 import os
 
 hubspot_client = HubSpot( api_key=os.environ["HUBSPOT_API_KEY"],) #Inicializo el cliente de HubSpot
@@ -22,4 +22,28 @@ def update_hubspot(email, name):
         contacts_api.basic_api.create(create_data)
 
   except Exception as e: #Captura cualquier excepcion que pueda ocurrir
-    print("Error", e)
+    print("Error", e)'''
+
+import requests, os
+
+Api_Key = os.environ["HUBSPOT_API_KEY"]
+URL_HubSpot = 'https://api.hubapi.com/crm/v3/objects/contacts'
+
+def sync_with_hubspot(name, email):
+  headers = {
+    'Content-type': "application/json",
+    'Authorization': f'Bearer {Api_Key}'
+  }
+  data = {
+    "properties": {
+      'email': email,
+      'name': name
+    }
+  }
+
+  response = requests.post(URL_HubSpot, json=data, headers=headers)
+  try:
+    response.raise_for_status()
+    return response.json()
+  except requests.exceptions.HTTPError as e:
+    return {"error": str(e), "response": response.text}
